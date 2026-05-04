@@ -26,12 +26,12 @@ public class SmsService {
         SmsEntity entitySalva = repository.save(entity);
         return mapper.paraDTO(entitySalva);
     }
-    private  SmsEntity buscarMensagemPorId(Long id){
+    private SmsEntity buscarMensagemPorId(Long id){
         return  repository.findById(id).
                 orElseThrow(() -> new RuntimeException("Mensagem não encontrada"));
     }
 
-    public SmsResponseDTO atualizarStatus(Long id, SmsUpdateDTO dto){
+    public SmsResponseDTO atualizarStatusPorId(Long id, SmsUpdateDTO dto){
         SmsEntity entity = buscarMensagemPorId(id);
         entity.setStatus(dto.getStatus());
         repository.save(entity);
