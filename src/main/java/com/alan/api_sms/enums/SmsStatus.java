@@ -1,6 +1,5 @@
 package com.alan.api_sms.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
