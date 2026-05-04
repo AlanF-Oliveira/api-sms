@@ -2,7 +2,6 @@ package com.alan.api_sms.mapper;
 
 import com.alan.api_sms.dto.SmsRequestDTO;
 import com.alan.api_sms.dto.SmsResponseDTO;
-import com.alan.api_sms.dto.SmsUpdateDTO;
 import com.alan.api_sms.entity.SmsEntity;
 import org.mapstruct.Mapper;
 
@@ -10,7 +9,5 @@ import org.mapstruct.Mapper;
 public interface SmsMapper {
     SmsEntity paraEntity(SmsRequestDTO dto);
     SmsResponseDTO paraDTO(SmsEntity entity);
-    SmsEntity paraEntityUpdate(SmsUpdateDTO dto);
-
 
 }
