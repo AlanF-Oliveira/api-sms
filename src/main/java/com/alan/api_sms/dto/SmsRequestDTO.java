@@ -1,5 +1,6 @@
 package com.alan.api_sms.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -8,5 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class SmsRequestDTO {
+    @NotBlank
     private String phoneNumber;
 }

@@ -5,6 +5,7 @@ import com.alan.api_sms.dto.SmsResponseDTO;
 import com.alan.api_sms.dto.SmsUpdateDTO;
 import com.alan.api_sms.enums.SmsStatus;
 import com.alan.api_sms.service.SmsService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +20,12 @@ public class SmsController {
     private final SmsService service;
 
     @PostMapping
-    public ResponseEntity<SmsResponseDTO> cadastraSms(@RequestBody SmsRequestDTO dto) {
+    public ResponseEntity<SmsResponseDTO> cadastraSms(@RequestBody @Valid SmsRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastarSms(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SmsResponseDTO> atualizarStatusPorId(@PathVariable Long id, @RequestBody SmsUpdateDTO dto){
+    public ResponseEntity<SmsResponseDTO> atualizarStatusPorId(@PathVariable Long id, @RequestBody @Valid SmsUpdateDTO dto){
         return ResponseEntity.status(HttpStatus.OK).body(service.atualizarStatusPorId(id, dto));
     }
 
