@@ -1,8 +1,6 @@
 package com.alan.api_sms.dto;
 
 import com.alan.api_sms.enums.SmsStatus;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.*;
 
 import java.time.LocalDateTime;
