@@ -1,10 +1,8 @@
 package com.alan.api_sms.dto;
 
 import com.alan.api_sms.enums.SmsStatus;
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -12,5 +10,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class SmsUpdateDTO {
+    @NotNull
     private SmsStatus status;
 }
