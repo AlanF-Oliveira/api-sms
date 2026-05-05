@@ -5,6 +5,7 @@ import com.alan.api_sms.dto.SmsResponseDTO;
 import com.alan.api_sms.dto.SmsUpdateDTO;
 import com.alan.api_sms.entity.SmsEntity;
 import com.alan.api_sms.enums.SmsStatus;
+import com.alan.api_sms.exception.ResourceNotFoundException;
 import com.alan.api_sms.mapper.SmsMapper;
 import com.alan.api_sms.repository.SmsRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +29,7 @@ public class SmsService {
     }
     private SmsEntity buscarMensagemPorId(Long id){
         return  repository.findById(id).
-                orElseThrow(() -> new RuntimeException("Mensagem não encontrada"));
+                orElseThrow(() -> new ResourceNotFoundException("Mensagem não encontrada"));
     }
 
     public SmsResponseDTO atualizarStatusPorId(Long id, SmsUpdateDTO dto){
