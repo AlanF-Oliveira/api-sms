@@ -9,6 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class SmsRequestDTO {
-    @NotBlank
+    @NotBlank(message = "O número do telefone é obrigatório")
     private String phoneNumber;
 }
