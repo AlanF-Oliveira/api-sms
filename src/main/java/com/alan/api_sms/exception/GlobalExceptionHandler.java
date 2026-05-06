@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handlerHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         ErrorResponse error = ErrorResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
-                .mensagem("Status inválido. Valores aceitos: ENVIADO, RECEBIDO, ERRO_DE_ENVIO")
+                .mensagem("Status inválido. Status aceitos: ENVIADO, RECEBIDO, ERRO_DE_ENVIO")
                 .timestamp(LocalDateTime.now())
                 .build();
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
