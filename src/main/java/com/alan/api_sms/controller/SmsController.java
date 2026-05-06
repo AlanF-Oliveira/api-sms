@@ -26,14 +26,14 @@ public class SmsController {
     @PostMapping
     @Operation(summary = "Cadastra um novo sms")
     @ApiResponse(responseCode = "201", description = "Sms criado com sucesso")
-    @ApiResponse(responseCode = "400", description = "Falha na criacão")
+    @ApiResponse(responseCode = "400", description = "Falha na criação")
     public ResponseEntity<SmsResponseDTO> cadastraSms(@RequestBody @Valid SmsRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastarSms(dto));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualiza sms por id")
-    @ApiResponse(responseCode = "200", description = "Sms encontrado com sucesso")
+    @ApiResponse(responseCode = "200", description = "Sms atualizado com sucesso")
     @ApiResponse(responseCode = "404", description = "Sms não encontrado")
     public ResponseEntity<SmsResponseDTO> atualizarStatusPorId(@PathVariable Long id, @RequestBody @Valid SmsUpdateDTO dto){
         return ResponseEntity.status(HttpStatus.OK).body(service.atualizarStatusPorId(id, dto));
